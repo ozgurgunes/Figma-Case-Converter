@@ -1,0 +1,98 @@
+{
+  "name": "figma-case-converter",
+  "version": "1.0.0",
+  "description": "Changes the case of text in selected nodes to 'Sentence case', 'Title Case', 'UPPER CASE' or 'lower case'.",
+  "author": "Ozgur Gunes",
+  "authorEmail": "o.gunes@gmail.com",
+  "homepage": "https://github.com/ozgurgunes/Figma-Case-Converter",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ozgurgunes/Figma-Case-Converter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ozgurgunes/Figma-Case-Converter/issues"
+  },
+  "scripts": {
+    "build": "build-figma-plugin --typecheck --minify",
+    "watch": "build-figma-plugin --typecheck --watch"
+  },
+  "devDependencies": {
+    "@create-figma-plugin/build": "^1.8.4",
+    "@create-figma-plugin/tsconfig": "^1.8.4",
+    "@figma/plugin-typings": "^1.42.1",
+    "@types/langmap": "^0.0.1",
+    "@types/latinize": "^0.2.15",
+    "typescript": "*"
+  },
+  "dependencies": {
+    "@create-figma-plugin/utilities": "^1.8.4",
+    "langmap": "^0.0.16",
+    "latinize": "^0.5.0"
+  },
+  "figma-plugin": {
+    "name": "Case Converter",
+    "id": "1084764335769997212",
+    "editorType": [
+      "figma"
+    ],
+    "menu": [
+      {
+        "name": "Title Case",
+        "main": {
+          "src": "main.ts",
+          "handler": "titleCase"
+        },
+        "parameters": [
+          {
+            "name": "Locale",
+            "key": "locale",
+            "description": "Select language for localised conversion (istanbul -> İstanbul)."
+          }
+        ]
+      },
+      {
+        "name": "Sentence case",
+        "main": {
+          "src": "main.ts",
+          "handler": "sentenceCase"
+        },
+        "parameters": [
+          {
+            "name": "Locale",
+            "key": "locale",
+            "description": "Select language for localised conversion (istanbul -> İstanbul)."
+          }
+        ]
+      },
+      {
+        "name": "UPPER CASE",
+        "main": {
+          "src": "main.ts",
+          "handler": "upperCase"
+        },
+        "parameters": [
+          {
+            "name": "Locale",
+            "key": "locale",
+            "description": "Select language for localised conversion (istanbul -> İstanbul)."
+          }
+        ]
+      },
+      {
+        "name": "lower case",
+        "main": {
+          "src": "main.ts",
+          "handler": "lowerCase"
+        },
+        "parameters": [
+          {
+            "name": "Locale",
+            "key": "locale",
+            "description": "Select language for localised conversion (istanbul -> İstanbul)."
+          }
+        ]
+      }
+    ]
+  }
+}
